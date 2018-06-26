@@ -5,6 +5,10 @@
     streetlamp.lua: a modified & rebranded copy of tublib_addons2
 	Copyright (C) 2017-2018 Joachim Stolberg
 
+    one the forum: https://forum.minetest.net/viewtopic.php?f=9&t=18773
+
+    on github: https://github.com/joe7575/techpack
+
 	LGPLv2.1+
 	See LICENSE.txt for more information
 ]]--
@@ -81,7 +85,6 @@ minetest.register_node("lighting:streetlamp_on", {
 })
 
 
-
 -- Time of Day Streetlamps
 
 minetest.register_node("lighting:tod_streetlamp_off", {
@@ -145,8 +148,8 @@ minetest.register_node("lighting:tod_streetlamp_on", {
     minetest.register_abm({
         	nodenames = {"lighting:tod_streetlamp_off", "lighting:tod_streetlamp_on"},
         	interval = 10,
-        	chance = 2,
-            catch_up = false,
+        	chance = 1,
+--            catch_up = false,
         	action = function(pos, node)
         		local tod = minetest.get_timeofday()
         		if tod >= 0.2 and tod <= 0.8 then
